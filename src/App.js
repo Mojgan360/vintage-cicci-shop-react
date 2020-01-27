@@ -20,6 +20,9 @@ export default function App() {
       <Route path="/cart">
         <Cart />
       </Route>
+      <Route path="*">
+        <Error />
+      </Route>
     </Router>
   );
 }
