@@ -12,13 +12,15 @@ Variables
 :root {
   /* --primaryColor: #9e3aa3; */
   /* --primaryDarkColor: #4e1d51; */
-  --primaryColor: #f15025;
-  --primaryDarkColor: #c02c03;
+  --primaryColor: #c37a2e;
+  /* --primaryDarkColor: #c02c03; */
+  --primaryDarkColor: #4e2710;
+
   --primaryFont: "Catamaran", sans-serif;
   --slantedFont: "Kaushan Script", cursive;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
-  --mainBackground: #ececec;
+  --mainBackground: #e8e4d3;
   --mainOverlay: rgba(35, 10, 36, 0.4);
   --mainBlack: #222;
   --mainGrey: #ececec;
@@ -145,7 +147,7 @@ Header
 }
 .logo {
   margin: 0 auto;
-  width: 9rem;
+  width: 17rem;
 }
 .header ul {
   display: flex;

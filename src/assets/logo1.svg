@@ -1,26 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="402" height="69" viewBox="0 0 402 69">
+<svg xmlns="http://www.w3.org/2000/svg" width="467" height="85" viewBox="0 0 467 85">
   <defs>
     <style>
       .cls-1, .cls-2, .cls-3 {
         font-size: 30px;
-        font-family: Christine;
+        font-family: Felipe;
       }
 
       .cls-1 {
-        fill: #f66;
+        fill: #e37a2e;
       }
 
       .cls-2 {
-        fill: #363;
+        fill: #8bb3a0;
       }
 
       .cls-3 {
-        fill: #ffe425;
+        fill: #e77a2e;
       }
     </style>
   </defs>
-  <image id="Lager_1" data-name="Lager 1" width="207" height="44" xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAZIAAABFCAYAAABgzmDZAAABEUlEQVR4nO3VMQEAIAzAsIF/aXgCD/RNJPTpOvfcAYBPWzgACiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMBIDESABIjASAxEgASIwEgMRIAEiMB4N/MPBCYBCBeurryAAAAAElFTkSuQmCC"/>
-  <text id="Vintage_" data-name="Vintage " class="cls-1" transform="translate(13.477 48.503) scale(1.605)">Vintage </text>
-  <text id="Cicci_" data-name="Cicci " class="cls-2" transform="translate(178.212 46.042) scale(1.605)">Cicci </text>
-  <text id="Shop" class="cls-3" transform="translate(284.536 49.631) scale(1.605)">Shop</text>
+  <text id="Vintage_" data-name="Vintage " class="cls-1" transform="translate(34.477 59.502) scale(1.605)">Vintage </text>
+  <text id="Cicci_" data-name="Cicci " class="cls-2" transform="translate(197.212 61.042) scale(1.605)">Cicci </text>
+  <text id="Shop" class="cls-3" transform="translate(305.536 60.631) scale(1.605)">Shop</text>
 </svg>
