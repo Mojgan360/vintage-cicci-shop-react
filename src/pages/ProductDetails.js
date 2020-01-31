@@ -27,7 +27,7 @@ export default function ProductDetails() {
       <section className="single-product">
         <img src={url} alt="product" className="single-product-image" />
         <h1>{title}</h1>
-        <h2>{price}</h2>
+        <h2>${price}</h2>
         <p>{description}</p>
         <button
           className="brn btn-primary btn-block"
