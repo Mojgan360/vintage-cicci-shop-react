@@ -7,7 +7,7 @@ import { productContext } from "../context/products";
 // import { cartContext } from "../context/cart";
 
 export default function ProductDetails() {
-  const { loading, products } = React.useContext(productContext);
+  const { products } = React.useContext(productContext);
   // console.log(useParams());
   const history = useHistory();
   const { id } = useParams();

@@ -1,17 +1,18 @@
-// cart context
 import React from "react";
 import localCart from "../utils/localCart";
-const cartContext = React.createContext();
+
+const CartContext = React.createContext();
 
 function CartProvider({ children }) {
   const [cart, setCart] = React.useState(localCart);
   const [total, setTotal] = React.useState(0);
-  const [cartItam, setCartItam] = React.useState(0);
+  const [cartItems, setCartItems] = React.useState(localCart);
 
   return (
-    <cartContext.Provider value={{ cart, total, cartItam }}>
+    <CartContext.Provider value={{ cart, total, cartItems }}>
       {children}
-    </cartContext.Provider>
+    </CartContext.Provider>
   );
 }
-export { cartContext, CartProvider };
+
+export { CartContext, CartProvider };
