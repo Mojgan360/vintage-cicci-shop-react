@@ -65,11 +65,31 @@ function CartProvider({ children }) {
     setCart(_newCart);
   };
 
-  //add item
-  const addToCart = product => {};
-  //clear cart
+  //add item(product)
+  // add to cart
+  const addToCart = product => {
+    console.log(product);
+    const {
+      id,
+      title,
+      image: { url },
+      price
+    } = product;
+    const item = [...cart].find(item => item.id === id);
+    if (item) {
+      increaseAmount(id);
+      return;
+    } else {
+      const newItem = { id, title, image: url, price, amount: 1 };
+      const newcartItem = [...cart, newItem];
+      setCart(newcartItem);
+    }
+  };
 
-  const clearCart = () => {};
+  //clear cart
+  const clearCart = () => {
+    setCart([]);
+  };
 
   return (
     <CartContext.Provider

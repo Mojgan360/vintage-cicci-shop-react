@@ -1,13 +1,14 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-
 import Loading from "../components/Loading";
 import { productContext } from "../context/products";
+import { CartContext } from "../context/cart";
 // import { cartContext } from "../context/cart";
 
 export default function ProductDetails() {
   const { products } = React.useContext(productContext);
+  const { addToCart } = React.useContext(CartContext);
   // console.log(useParams());
   const history = useHistory();
   const { id } = useParams();
@@ -34,6 +35,8 @@ export default function ProductDetails() {
           onClick={() => {
             console.log("add to cart");
             history.push("/cart");
+            // console.log(product);
+            addToCart(product);
           }}
         >
           add to cart
