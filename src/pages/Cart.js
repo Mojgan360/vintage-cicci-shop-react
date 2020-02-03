@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 
 export default function Cart() {
   let user = false;
+
   const { cart, total } = React.useContext(CartContext);
   // console.log(cart);
   // console.log(total);

@@ -16,8 +16,8 @@ export default function CartItem({ id, image, title, price, amount }) {
           type="button"
           className="cart-btn remove-btn"
           onClick={() => {
-            // removeItem(id);
-            console.log("click on remove button!");
+            removeItem(id);
+            // console.log("click on remove button!");
           }}
         >
           remove
