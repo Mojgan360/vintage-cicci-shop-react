@@ -3,36 +3,31 @@ import localCart from "../utils/localCart";
 
 const CartContext = React.createContext();
 
+function getCartFromLocalStorage() {
+  return localStorage.getItem("cart")
+    ? JSON.parse(localStorage.getItem("cart"))
+    : [];
+}
+
 function CartProvider({ children }) {
-  const [cart, setCart] = React.useState(localCart);
+  const [cart, setCart] = React.useState([]);
   const [total, setTotal] = React.useState(0);
-  const [cartItems, setCartItems] = React.useState(localCart);
+  const [cartItems, setCartItems] = React.useState(getCartFromLocalStorage());
 
   React.useEffect(() => {
-    //effect: cart items
-    //Sum of values in an object array
-
-    let newCartItem = cart.reduce((total, cartItem) => {
-      //console.log({ total, cartItem });
+    // local storage
+    localStorage.setItem("cart", JSON.stringify(cart));
+    // cart items
+    let newCartItems = cart.reduce((total, cartItem) => {
       return (total += cartItem.amount);
-      //total is zero
     }, 0);
-    //console.log(newCartItem);
-    //cart total
+    setCartItems(newCartItems);
+    // cart total
     let newTotal = cart.reduce((total, cartItem) => {
-      // console.log(total);
-      total = cartItem.amount * cartItem.price;
-      return total;
+      return (total += cartItem.amount * cartItem.price);
     }, 0);
-    // console.log(newTotal);
     newTotal = parseFloat(newTotal.toFixed(2));
-    console.log(newTotal);
-
-    return () => {
-      //cleanup
-      setCartItems(newCartItem);
-      setTotal(newTotal);
-    };
+    setTotal(newTotal);
   }, [cart]);
 
   //remove item
