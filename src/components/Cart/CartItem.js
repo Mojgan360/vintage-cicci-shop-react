@@ -16,7 +16,8 @@ export default function CartItem({ id, image, title, price, amount }) {
           type="button"
           className="cart-btn remove-btn"
           onClick={() => {
-            removeItem(id);
+            // removeItem(id);
+            console.log("click on remove button!");
           }}
         >
           remove
@@ -27,7 +28,8 @@ export default function CartItem({ id, image, title, price, amount }) {
           type="button"
           className="cart-btn amount-btn"
           onClick={() => {
-            increaseAmount(id);
+            console.log("click on Up icone");
+            // increaseAmount(id);
           }}
         >
           <FaAngleUp />
@@ -37,7 +39,9 @@ export default function CartItem({ id, image, title, price, amount }) {
           type="button"
           className="cart-btn amount-btn"
           onClick={() => {
-            decreaseAmount(id, amount);
+            console.log("click on Down icone");
+
+            // decreaseAmount(id, amount);
           }}
         >
           <FaAngleDown />

@@ -10,25 +10,26 @@ import { Link } from "react-router-dom";
 export default function Cart() {
   let user = false;
   const { cart, total } = React.useContext(CartContext);
-  console.log(cart);
-  console.log(total);
+  // console.log(cart);
+  // console.log(total);
   if (cart.length === 0) {
     return <EmptyCart />;
   }
   return (
     <section className="cart-items section">
       <div>
+        <h2>your cart</h2>
         {cart.map((item, index) => {
           return <CartItem key={index} {...item} />;
         })}
       </div>
-      <h1>total: ${total}</h1>
+      <h2>total: ${total}</h2>
       {user ? (
         <Link to="chekout" className="btn btn-primary">
           checkout
         </Link>
       ) : (
-        <Link to="login" className="btn btn-primary">
+        <Link to="login" className="btn btn-primary btn-block">
           login
         </Link>
       )}
