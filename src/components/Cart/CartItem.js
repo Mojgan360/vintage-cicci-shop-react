@@ -28,8 +28,7 @@ export default function CartItem({ id, image, title, price, amount }) {
           type="button"
           className="cart-btn amount-btn"
           onClick={() => {
-            console.log("click on Up icone");
-            // increaseAmount(id);
+            increaseAmount(id);
           }}
         >
           <FaAngleUp />

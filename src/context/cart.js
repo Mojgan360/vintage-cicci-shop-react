@@ -41,8 +41,14 @@ function CartProvider({ children }) {
   };
 
   //increase amount
-  const increaseAmount = id => {};
-  //decrease amount
+  const increaseAmount = id => {
+    const cartItem = [...cart].map(item => {
+      return item.id === id
+        ? { ...item, amount: item.amount + 1 }
+        : { ...item };
+    });
+    setCart(cartItem);
+  };
 
   const decreaseAmount = id => {};
   //add item
