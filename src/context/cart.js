@@ -50,9 +50,22 @@ function CartProvider({ children }) {
     setCart(cartItem);
   };
 
-  const decreaseAmount = id => {};
-  //add item
+  //decreade amount
+  const decreaseAmount = (id, amount) => {
+    if (amount === 1) {
+      removeItem(id);
+      return;
+    }
 
+    const _newCart = [...cart].map(item => {
+      return item.id === id
+        ? { ...item, amount: item.amount - 1 }
+        : { ...item };
+    });
+    setCart(_newCart);
+  };
+
+  //add item
   const addToCart = product => {};
   //clear cart
 
