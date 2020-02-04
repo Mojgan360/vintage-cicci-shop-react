@@ -7,7 +7,7 @@ export default function CartItem({ id, image, title, price, amount }) {
     CartContext
   );
   return (
-    <article className="cart-item">
+    <article className="cart-item ">
       <img src={image} alt={title} />
       <div>
         <h4>{title}</h4>

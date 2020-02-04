@@ -17,7 +17,7 @@ export default function Cart() {
     return <EmptyCart />;
   }
   return (
-    <section className="cart-items section">
+    <section className="cart-items  section cart-box">
       <div>
         <h2>your cart</h2>
         {cart.map((item, index) => {
@@ -25,6 +25,7 @@ export default function Cart() {
         })}
       </div>
       <h2>total: ${total}</h2>
+
       {user ? (
         <Link to="chekout" className="btn btn-primary">
           checkout
