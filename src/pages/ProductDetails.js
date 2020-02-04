@@ -33,7 +33,7 @@ export default function ProductDetails() {
         <button
           className="brn btn-primary btn-block"
           onClick={() => {
-            console.log("add to cart");
+            // console.log("add to cart");
             history.push("/cart");
             // console.log(product);
             addToCart(product);
