@@ -4,8 +4,10 @@ export default function Hero({ children }) {
   return (
     <div className="hero">
       <div className="banner">
-        <h1>i love vintage, i love Cicci</h1>
-        <p>This is just for tutorial</p>
+        <h1>Love Vintage.</h1>
+        <p>Love Cicci ...</p>
+        <p>Love Code...</p>
+
         {children}
       </div>
     </div>

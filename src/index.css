@@ -113,21 +113,50 @@ TOGGLED ICONES
 .displayIsNone {
   display: none;
 }
+
 .faAlignLeft {
-  font-size: 2.5rem;
-  /*
-  position: relative;
-  margin: 0.5rem;
-  padding: 0;
+  width: 5rem;
+  height: 50px;
+  padding: 7px;
+  top: 10px;
+  position: sticky;
   z-index: 2;
   overflow: hidden;
-  letter-spacing: var(--mainSpacing);
   color: var(--primaryColor);
   transition: var(--mainTransition);
   cursor: pointer;
-  background: transparent; */
+  background: var(--mainBackground);
+}
+.faAlignLeft:hover {
+  color: var(--mainWhite);
+  background: var(--primaryColor);
+}
+.faAlignLeft:active {
+  color: var(--primaryColor);
+  background: var(--mainWhite);
+}
+.logo {
+  height: 50px;
+  display: flex;
+  margin-right: 10% !important;
+  width: 80%;
+}
+
+.btn-faAlignLeft {
+  position: relative;
+
+  margin-left: 5%;
+}
+
+.wrapMenu {
+  margin: 0 auto;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding-bottom: 20px;
 }
 /* 
+
 ====== 
 Buttons 
 ======
@@ -247,10 +276,29 @@ Header
   .large-menu {
     display: none;
   }
+  .hero {
+    width: 100%;
+  }
 }
 @media only screen and (min-width: 501px) {
   .menu_s {
     display: none;
+  }
+  .hero {
+    width: 85% !important;
+    margin: 0 auto;
+    min-height: calc(65vh);
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7) 50%,
+        rgba(255, 255, 255, 0.1)
+      ),
+      url("./assets/mainBcg.jpeg") center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primaryDarkColor);
+    box-shadow: 0.1rem 0.2rem 0.2rem 0rem rgba(0, 0, 0, 0.3);
   }
 }
 /* 
@@ -259,7 +307,7 @@ Hero
 ======
 */
 .hero {
-  width: 85%;
+  width: 100%;
   margin: 0 auto;
   min-height: calc(65vh);
   background: linear-gradient(
@@ -306,7 +354,7 @@ Hero
 }
 
 .hero h1 {
-  font-size: 5.3rem;
+  font-size: 5rem;
 }
 .hero p {
   font-size: 2.3rem;
@@ -314,6 +362,7 @@ Hero
 .btn-hero {
   font-size: 1.2rem;
   padding: 1rem 3rem;
+  margin-bottom: 1rem;
 }
 
 /* 

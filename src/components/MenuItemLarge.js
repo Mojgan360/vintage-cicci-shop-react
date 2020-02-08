@@ -1,11 +1,14 @@
 import React from "react";
 
 import { Link } from "react-router-dom";
+import logo from "../assets/logo1.svg";
 
 export default function MenuItemLarge() {
   return (
     <div>
       <div className="   large-menu">
+        <img src={logo} alt="logo" />
+
         <nav className=" larg-nav ">
           <ul>
             <li>
