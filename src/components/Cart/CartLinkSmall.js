@@ -6,11 +6,11 @@ import { FaShoppingCart } from "react-icons/fa";
 export default function CartLinkSmall() {
   const { cartItems } = React.useContext(CartContext);
   return (
-    <div className="cart-link-container  ">
+    <div className="cart-link-container-s  ">
       <Link to="/cart">
         {" "}
         <span>
-          <FaShoppingCart className="FaShoppingCart" />
+          <FaShoppingCart className="FaShoppingCart-s" />
         </span>
       </Link>
       <span className="cart-link-total-s">{cartItems}</span>
