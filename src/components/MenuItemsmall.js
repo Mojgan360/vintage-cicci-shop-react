@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { FaBars } from "react-icons/fa";
 import styled from "styled-components";
 import logo from "../assets/logo1.svg";
+import CartLinkSmall from "./Cart/CartLinkSmall";
+
 export default function MenuItemsmall() {
   const [isToggled, setToggled] = React.useState(false);
 
@@ -13,12 +15,15 @@ export default function MenuItemsmall() {
   console.log(isToggled);
   return (
     <div className="menu_s wrapMenu">
-      <button className="btn-faAlignLeft" type="button" onClick={toggledIcon}>
-        <FaBars className="faAlignLeft" />
-      </button>
-      <img src={logo} alt="logo" className="logo" />
-      {/* onClick={toggledIcon}
-className="sidebar-link" */}
+      <div>
+        <button className="btn-faAlignLeft" type="button" onClick={toggledIcon}>
+          <FaBars className="faAlignLeft" />
+        </button>
+      </div>
+      <div>
+        <img src={logo} alt="logo" className="logo" />
+      </div>
+
       <div className="sideWrapper">
         <SideBarWrapper show={isToggled} onClick={toggledIcon}>
           <ul>
@@ -58,6 +63,9 @@ className="sidebar-link" */}
           </ul>
         </SideBarWrapper>
       </div>
+      <span>
+        <CartLinkSmall />
+      </span>
     </div>
   );
 }

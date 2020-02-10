@@ -135,11 +135,16 @@ TOGGLED ICONES
   color: var(--primaryColor);
   background: var(--mainWhite);
 }
+.FaShoppingCart {
+  margin: 10px 50px 0 0;
+  font-size: 1.5rem;
+  color: var(--primaryColor);
+}
 .logo {
   height: 50px;
   display: flex;
   margin-right: 10% !important;
-  width: 80%;
+  width: 100%;
 }
 
 .btn-faAlignLeft {
@@ -583,11 +588,34 @@ Cart Link
 ======
 */
 .cart-link-container {
+  margin-top: 8px;
   position: relative;
+  font-weight: normal;
 }
 .cart-link-container a {
   margin-right: 10px;
   font-weight: bolder;
+  color: #757575;
+}
+.cart-link-container :hover {
+  padding: 6px;
+  background: #c37a2e;
+  color: var(--mainWhite);
+  background: linear-gradient(top, #c02c03 0%, #c37a2e 40%);
+  background: -moz-linear-gradient(top, #c02c03 0%, #c37a2e 40%);
+  background: -webkit-linear-gradient(top, #c02c03 0%, #c37a2e 40%);
+}
+.cart-link-total-s {
+  display: block;
+  position: absolute;
+  background: var(--primaryColor);
+  top: -7px;
+  right: 15px;
+  padding: 0rem 0.4rem;
+  margin-right: 30px;
+  border-radius: 50%;
+  font-size: 1rem;
+  color: var(--mainWhite);
 }
 .cart-link-total {
   display: block;
@@ -600,6 +628,7 @@ Cart Link
   font-size: 1rem;
   color: var(--mainWhite);
 }
+
 /* 
 ====== 
 Login Form
