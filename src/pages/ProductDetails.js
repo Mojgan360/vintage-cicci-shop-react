@@ -17,16 +17,11 @@ export default function ProductDetails() {
   if (products.length === 0) {
     return <Loading />;
   } else {
-    const {
-      image: { url },
-      title,
-      price,
-      description
-    } = product;
+    const { image, title, price, description } = product;
     // const url= image.url
     return (
       <section className="single-product">
-        <img src={url} alt="product" className="single-product-image" />
+        <img src={image} alt="product" className="single-product-image" />
         <h1>{title}</h1>
         <h2>${price}</h2>
         <p>{description}</p>

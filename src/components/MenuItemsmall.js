@@ -12,7 +12,6 @@ export default function MenuItemsmall() {
     setToggled(!isToggled);
   };
 
-  console.log(isToggled);
   return (
     <div className="menu_s wrapMenu">
       <div>

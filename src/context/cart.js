@@ -1,5 +1,4 @@
 import React from "react";
-import localCart from "../utils/localCart";
 
 const CartContext = React.createContext();
 
@@ -64,18 +63,13 @@ function CartProvider({ children }) {
   // add to cart
   const addToCart = product => {
     console.log(product);
-    const {
-      id,
-      title,
-      image: { url },
-      price
-    } = product;
+    const { id, title, image, price } = product;
     const item = [...cart].find(item => item.id === id);
     if (item) {
       increaseAmount(id);
       return;
     } else {
-      const newItem = { id, title, image: url, price, amount: 1 };
+      const newItem = { id, title, image, price, amount: 1 };
       const newcartItem = [...cart, newItem];
       setCart(newcartItem);
     }
