@@ -1,5 +1,88 @@
 import React from "react";
+import { useHistory } from "react-router-dom";
 
 export default function Login() {
-  return <h1>hello from login page</h1>;
+  const history = useHistory();
+
+  const [email, setEmail] = React.useState("");
+  const [password, setPassword] = React.useState("");
+  const [username, setUsername] = React.useState("default");
+  const [isMember, setIsMember] = React.useState(true);
+
+  let isEmpty = false;
+
+  const toggleMember = () => {
+    setIsMember(!isMember);
+  };
+  const handlerSubmit = async e => {};
+
+  return (
+    <section className=" form section">
+      <h2 className="section-title">{isMember ? "sign in" : "register"}</h2>
+      <form className="login-form">
+        {/* Start: single input */}
+        <div className="form-control">
+          <label htmlFor="email">email</label>
+          <input
+            type="email"
+            id="email"
+            value={email}
+            onChange={e => setEmail(e.target.value)}
+          ></input>
+        </div>
+        {/* End: single input */}
+
+        {/* Start: single input */}
+        <div className="form-control">
+          <label htmlFor="password">password</label>
+          <input
+            type="password"
+            id="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          ></input>
+        </div>
+        {/* End: single input */}
+        {/* Start: single input */}
+        {!isMember && (
+          <div className="form-control">
+            <label htmlFor="username">username</label>
+            <input
+              type="text"
+              id="username"
+              value={username}
+              onChange={e => setUsername(e.target.value)}
+            ></input>
+          </div>
+        )}
+        {/* End: single input */}
+        {/* Start: empty form text */}
+        {isEmpty && (
+          <p className="form-empty">please fill out all form field</p>
+        )}
+        {/* Start: empty form text */}
+
+        {/* Start: submit button */}
+        {!isEmpty && (
+          <button
+            type="submit"
+            className="btn btn-primary btn-block"
+            onClick={handlerSubmit}
+          >
+            submit
+          </button>
+        )}
+        {/* End: submit button */}
+
+        {/* Start: register link */}
+        <p className="register-link">
+          {isMember ? "need to register" : "already register"}
+          <button type="button" onClick={toggleMember}>
+            click here
+          </button>
+        </p>
+        {/* End: register link */}
+      </form>
+    </section>
+  );
 }

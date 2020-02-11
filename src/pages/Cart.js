@@ -1,7 +1,7 @@
 import React from "react";
 import { CartContext } from "../context/cart";
 //import { UserContext } from "../context/user";
-import localCart from "../utils/localCart";
+// import localCart from "../utils/localCart";
 
 import CartItem from "../components/Cart/CartItem";
 import EmptyCart from "../components/Cart/EmptyCart";
