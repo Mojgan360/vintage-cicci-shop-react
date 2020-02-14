@@ -9,9 +9,9 @@ function getCartFromLocalStorage() {
 }
 
 function CartProvider({ children }) {
-  const [cart, setCart] = React.useState([]);
+  const [cart, setCart] = React.useState(getCartFromLocalStorage());
   const [total, setTotal] = React.useState(0);
-  const [cartItems, setCartItems] = React.useState(getCartFromLocalStorage());
+  const [cartItems, setCartItems] = React.useState(0);
 
   React.useEffect(() => {
     // local storage
