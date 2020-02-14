@@ -1,5 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
+import loginUser from "../strapi/loginUser";
+import registerUser from "../strapi/registerUser";
 
 export default function Login() {
   const history = useHistory();
@@ -9,13 +11,33 @@ export default function Login() {
   const [username, setUsername] = React.useState("default");
   const [isMember, setIsMember] = React.useState(true);
 
-  let isEmpty = false;
+  let isEmpty = !email || !password || !username;
+  // let isEmpty = false;
 
   const toggleMember = () => {
-    setIsMember(!isMember);
+    setIsMember(preValue => {
+      let isMember = !preValue;
+      isMember ? setUsername("default") : setUsername("");
+      return isMember;
+    });
   };
-  const handlerSubmit = async e => {};
-
+  const handlerSubmit = async e => {
+    e.preventDefault();
+    let response;
+    if (isMember) {
+      // response = await loginUser
+    } else {
+      response = await registerUser({ username, email, password });
+    }
+    if (response) {
+      console.log("success!");
+      console.log(response);
+    } else {
+      //
+    }
+  };
+  console.log(`isMamber: ${isMember}`);
+  console.log(`isEmpty: ${isEmpty}`);
   return (
     <section className=" form section">
       <h2 className="section-title">{isMember ? "sign in" : "register"}</h2>
