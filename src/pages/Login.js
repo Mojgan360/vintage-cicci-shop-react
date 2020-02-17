@@ -15,7 +15,7 @@ export default function Login() {
   const [username, setUsername] = React.useState("default");
   const [isMember, setIsMember] = React.useState(true);
 
-  let isEmpty = !email || !password || !username;
+  let isEmpty = !email || !password || !username || alert.show;
   // let isEmpty = false;
 
   const toggleMember = () => {
@@ -26,6 +26,7 @@ export default function Login() {
     });
   };
   const handlerSubmit = async e => {
+    showAlert({ msg: "accessing user data, please wait..." });
     e.preventDefault();
     let response;
     if (isMember) {
