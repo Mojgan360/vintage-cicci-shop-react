@@ -43,6 +43,8 @@ export default function Login() {
       const newUser = { token, username };
       userLogin(newUser);
       history.push("/products");
+      setEmail("");
+      setPassword("");
     } else {
       //
     }
