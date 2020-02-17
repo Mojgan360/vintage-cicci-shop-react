@@ -8,7 +8,7 @@ export default function Login() {
   const history = useHistory();
 
   //user context
-  const { userLogin } = React.useContext(UserContext);
+  const { userLogin, alert, showAlert } = React.useContext(UserContext);
   //state value
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
@@ -42,11 +42,17 @@ export default function Login() {
       } = response.data;
       const newUser = { token, username };
       userLogin(newUser);
+      showAlert({
+        msg: `you are logged in ${username}`
+      });
       history.push("/products");
+    } else {
+      showAlert({
+        msg: "there was an error, please try again",
+        type: "danger"
+      });
       setEmail("");
       setPassword("");
-    } else {
-      //
     }
   };
   console.log(`isMamber: ${isMember}`);

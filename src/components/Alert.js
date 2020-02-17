@@ -1,5 +1,5 @@
 import React from "react";
-import { FaWindowClose } from "react-icons";
+import { FaWindowClose } from "react-icons/fa";
 import { UserContext } from "../context/user";
 
 export default function Alert() {
@@ -14,7 +14,10 @@ export default function Alert() {
   }
   return (
     <div className={css}>
-      <p>{alert.show && alert.msg}...</p>
+      <p>{alert.show && alert.msg}</p>
+      <button className="alert-close" onClick={hideAlert}>
+        <FaWindowClose />
+      </button>
     </div>
   );
 }

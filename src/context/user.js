@@ -20,7 +20,7 @@ function UserProvider({ children }) {
     localStorage.removeItem("user");
   };
   const [alert, setAlert] = React.useState({
-    show: true,
+    show: false,
     msg: "",
     type: "success"
   });
