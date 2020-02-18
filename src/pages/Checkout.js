@@ -20,9 +20,49 @@ function Checkout(props) {
   const [error, setError] = React.useState("");
   let isEmpty = !name || alert.show;
 
-  const handelSubmit = async e => {
+  async function handelSubmit(e) {
     e.preventDefault();
-  };
+
+    showAlert({ msg: "submitting order, please wait..." });
+    const resposne = await props.stripe
+      .createToken()
+      .catch(error => console.log(error));
+    const { token } = resposne;
+    if (token) {
+      //code
+      console.log(resposne);
+      setError("");
+      const { id } = token;
+      let order = await submitOrder({
+        name: name,
+        total: total,
+        items: cart,
+        stripeTokenId: id,
+        userToken: user.token
+      });
+      if (order) {
+        //code
+        showAlert({
+          msg: "your order is completed!"
+        });
+        clearCart();
+        history.push("/");
+        return;
+      } else {
+        //code
+        showAlert({
+          msg: "there was an error with your order, please try again!",
+          type: "danger"
+        });
+      }
+    } else {
+      //code
+      hideAlert();
+      setError(resposne.error.message);
+    }
+    console.log(resposne);
+  }
+
   if (cart.length < 1) return <EmptyCart />;
   return (
     <section className="section form">

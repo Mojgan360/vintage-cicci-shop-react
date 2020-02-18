@@ -4,7 +4,7 @@ import { UserContext } from "../context/user";
 
 export default function PrivateRoute({ children, ...rest }) {
   const { user } = React.useContext(UserContext);
-  console.log(rest);
+  // console.log(rest);
   return (
     <Route
       {...rest}
