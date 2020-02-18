@@ -28,11 +28,11 @@ export default function Cart() {
       <h2>total: ${total}</h2>
 
       {user.token ? (
-        <Link to="chekout" className="btn btn-primary btn-block">
+        <Link to="/checkout" className="btn btn-primary btn-block">
           checkout
         </Link>
       ) : (
-        <Link to="login" className="btn btn-primary btn-block">
+        <Link to="/login" className="btn btn-primary btn-block">
           login
         </Link>
       )}
