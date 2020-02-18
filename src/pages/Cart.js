@@ -1,6 +1,6 @@
 import React from "react";
 import { CartContext } from "../context/cart";
-//import { UserContext } from "../context/user";
+import { UserContext } from "../context/user";
 // import localCart from "../utils/localCart";
 
 import CartItem from "../components/Cart/CartItem";
@@ -8,9 +8,10 @@ import EmptyCart from "../components/Cart/EmptyCart";
 import { Link } from "react-router-dom";
 
 export default function Cart() {
-  let user = false;
+  // let user = false;
 
   const { cart, total } = React.useContext(CartContext);
+  const { user } = React.useContext(UserContext);
   // console.log(cart);
   // console.log(total);
   if (cart.length === 0) {
@@ -26,8 +27,8 @@ export default function Cart() {
       </div>
       <h2>total: ${total}</h2>
 
-      {user ? (
-        <Link to="chekout" className="btn btn-primary">
+      {user.token ? (
+        <Link to="chekout" className="btn btn-primary btn-block">
           checkout
         </Link>
       ) : (

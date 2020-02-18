@@ -220,7 +220,43 @@ Buttons
 Header
 ======
 */
+.login {
+  padding: 7px 4px 7px 4px;
 
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: green;
+  font-size: 1rem;
+  list-style-type: none;
+  text-transform: capitalize;
+}
+
+.login:hover {
+  padding: 5px;
+  color: var(--mainWhite);
+  background: #c37a2e;
+  background: linear-gradient(top, #c02c03 0%, #c37a2e 40%);
+  background: -moz-linear-gradient(top, #c02c03 0%, #c37a2e 40%);
+  background: -webkit-linear-gradient(top, #c02c03 0%, #c37a2e 40%);
+}
+.logout {
+  padding-bottom: 4px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: green;
+  font-size: 1rem;
+  list-style-type: none;
+  text-transform: capitalize;
+}
+.logout:hover {
+  color: var(--mainWhite);
+  background: #c37a2e;
+  background: linear-gradient(top, #c02c03 0%, #c37a2e 40%);
+  background: -moz-linear-gradient(top, #c02c03 0%, #c37a2e 40%);
+  background: -webkit-linear-gradient(top, #c02c03 0%, #c37a2e 40%);
+}
 .large-menu {
   width: 100%;
   font-weight: bold;
@@ -228,9 +264,6 @@ Header
   padding: 0;
   text-transform: capitalize;
   /* justify-content: center; */
-}
-.larg-nav {
-  /* font-size: 1rem; */
 }
 
 .large-menu nav {
