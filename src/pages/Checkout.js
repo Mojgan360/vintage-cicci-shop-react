@@ -19,7 +19,7 @@ function Checkout(props) {
   const [name, setName] = React.useState("");
   const [error, setError] = React.useState("");
   let isEmpty = !name || alert.show;
-
+  //submit
   async function handelSubmit(e) {
     e.preventDefault();
 
