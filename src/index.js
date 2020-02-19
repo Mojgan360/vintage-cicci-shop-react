@@ -7,13 +7,12 @@ import { CartProvider } from "./context/cart";
 import { UserProvider } from "./context/user";
 
 ReactDOM.render(
-  <ProductProvider>
-    <CartProvider>
-      <UserProvider>
+  <UserProvider>
+    <ProductProvider>
+      <CartProvider>
         <App />
-      </UserProvider>
-    </CartProvider>
-  </ProductProvider>,
-
+      </CartProvider>
+    </ProductProvider>
+  </UserProvider>,
   document.getElementById("root")
 );
