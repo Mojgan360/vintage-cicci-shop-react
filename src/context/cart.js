@@ -42,47 +42,32 @@ function CartProvider({ children }) {
 
   //increase amount
   const increaseAmount = id => {
-    // const cartItem = [...cart].map(item => {
-    //   return item.id === id
-    //     ? { ...item, amount: item.amount + 1 }
-    //     : { ...item };
-    // });
-    // setCart(cartItem);
+    dispatch({ type: "INCREASE", payload: id });
   };
 
   //decreade amount
   const decreaseAmount = (id, amount) => {
-    // if (amount === 1) {
-    //   removeItem(id);
-    //   return;
-    // }
-    // const _newCart = [...cart].map(item => {
-    //   return item.id === id
-    //     ? { ...item, amount: item.amount - 1 }
-    //     : { ...item };
-    // });
-    // setCart(_newCart);
+    if (amount === 1) {
+      dispatch({ type: "REMOVE", payload: id });
+      return;
+    }
+    dispatch({ type: "DECREASE", payload: id });
   };
 
   //add item(product)
   // add to cart
   const addToCart = product => {
-    // console.log(product);
-    // const { id, title, image, price } = product;
-    // const item = [...cart].find(item => item.id === id);
-    // if (item) {
-    //   increaseAmount(id);
-    //   return;
-    // } else {
-    //   const newItem = { id, title, image, price, amount: 1 };
-    //   const newcartItem = [...cart, newItem];
-    //   setCart(newcartItem);
-    // }
+    let tmp = [...cart].find(item => item.id === product.id);
+    if (tmp) {
+      dispatch({ type: "INCREASE", payload: product.id });
+    } else {
+      dispatch({ type: "ADDTOCART", payload: product });
+    }
   };
 
   //clear cart
   const clearCart = () => {
-    // setCart([]);
+    dispatch({ type: "CLEARCART" });
   };
 
   return (
