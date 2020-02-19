@@ -1,24 +1,26 @@
+import { REMOVE, INCREASE, DECREASE, ADDTOCART, CLEARCART } from "./action";
+
 export default (state, action) => {
   switch (action.type) {
-    case "REMOVE":
+    case REMOVE:
       return state.filter(item => item.id !== action.payload);
-    case "INCREASE":
+    case INCREASE:
       return state.map(item => {
         return item.id === action.payload
           ? { ...item, amount: item.amount + 1 }
           : { ...item };
       });
-    case "DECREASE":
+    case DECREASE:
       return state.map(item => {
         return item.id === action.payload
           ? { ...item, amount: item.amount - 1 }
           : { ...item };
       });
-    case "ADDTOCART":
+    case ADDTOCART:
       const { id, image, title, price } = action.payload;
       let product = { id, title, image, price, amount: 1 };
       return [...state, product];
-    case "CLEARCART":
+    case CLEARCART:
       return [];
     default:
       return state;

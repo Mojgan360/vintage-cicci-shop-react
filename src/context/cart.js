@@ -1,5 +1,6 @@
 import React from "react";
 import reducer from "../context/reducer";
+import { REMOVE, INCREASE, DECREASE, ADDTOCART, CLEARCART } from "./action";
 
 const CartContext = React.createContext();
 
@@ -37,21 +38,21 @@ function CartProvider({ children }) {
 
   //remove item
   const removeItem = id => {
-    dispatch({ type: "REMOVE", payload: id });
+    dispatch({ type: REMOVE, payload: id });
   };
 
   //increase amount
   const increaseAmount = id => {
-    dispatch({ type: "INCREASE", payload: id });
+    dispatch({ type: INCREASE, payload: id });
   };
 
   //decreade amount
   const decreaseAmount = (id, amount) => {
     if (amount === 1) {
-      dispatch({ type: "REMOVE", payload: id });
+      dispatch({ type: REMOVE, payload: id });
       return;
     }
-    dispatch({ type: "DECREASE", payload: id });
+    dispatch({ type: DECREASE, payload: id });
   };
 
   //add item(product)
@@ -59,15 +60,15 @@ function CartProvider({ children }) {
   const addToCart = product => {
     let tmp = [...cart].find(item => item.id === product.id);
     if (tmp) {
-      dispatch({ type: "INCREASE", payload: product.id });
+      dispatch({ type: INCREASE, payload: product.id });
     } else {
-      dispatch({ type: "ADDTOCART", payload: product });
+      dispatch({ type: ADDTOCART, payload: product });
     }
   };
 
   //clear cart
   const clearCart = () => {
-    dispatch({ type: "CLEARCART" });
+    dispatch({ type: CLEARCART });
   };
 
   return (
