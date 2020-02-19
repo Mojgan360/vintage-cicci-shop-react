@@ -1,4 +1,5 @@
 import React from "react";
+import reducer from "../context/reducer";
 
 const CartContext = React.createContext();
 
@@ -7,9 +8,14 @@ function getCartFromLocalStorage() {
     ? JSON.parse(localStorage.getItem("cart"))
     : [];
 }
+// const reducer = (state, action) => {
+//   return state;
+// };
 
 function CartProvider({ children }) {
-  const [cart, setCart] = React.useState(getCartFromLocalStorage());
+  // const [cart, setCart] = React.useState(getCartFromLocalStorage());
+  const [cart, dispatch] = React.useReducer(reducer, getCartFromLocalStorage());
+
   const [total, setTotal] = React.useState(0);
   const [cartItems, setCartItems] = React.useState(0);
 
@@ -31,53 +37,52 @@ function CartProvider({ children }) {
 
   //remove item
   const removeItem = id => {
-    setCart([...cart].filter(item => item.id !== id));
+    // setCart([...cart].filter(item => item.id !== id));
   };
 
   //increase amount
   const increaseAmount = id => {
-    const cartItem = [...cart].map(item => {
-      return item.id === id
-        ? { ...item, amount: item.amount + 1 }
-        : { ...item };
-    });
-    setCart(cartItem);
+    // const cartItem = [...cart].map(item => {
+    //   return item.id === id
+    //     ? { ...item, amount: item.amount + 1 }
+    //     : { ...item };
+    // });
+    // setCart(cartItem);
   };
 
   //decreade amount
   const decreaseAmount = (id, amount) => {
-    if (amount === 1) {
-      removeItem(id);
-      return;
-    }
-
-    const _newCart = [...cart].map(item => {
-      return item.id === id
-        ? { ...item, amount: item.amount - 1 }
-        : { ...item };
-    });
-    setCart(_newCart);
+    // if (amount === 1) {
+    //   removeItem(id);
+    //   return;
+    // }
+    // const _newCart = [...cart].map(item => {
+    //   return item.id === id
+    //     ? { ...item, amount: item.amount - 1 }
+    //     : { ...item };
+    // });
+    // setCart(_newCart);
   };
 
   //add item(product)
   // add to cart
   const addToCart = product => {
-    console.log(product);
-    const { id, title, image, price } = product;
-    const item = [...cart].find(item => item.id === id);
-    if (item) {
-      increaseAmount(id);
-      return;
-    } else {
-      const newItem = { id, title, image, price, amount: 1 };
-      const newcartItem = [...cart, newItem];
-      setCart(newcartItem);
-    }
+    // console.log(product);
+    // const { id, title, image, price } = product;
+    // const item = [...cart].find(item => item.id === id);
+    // if (item) {
+    //   increaseAmount(id);
+    //   return;
+    // } else {
+    //   const newItem = { id, title, image, price, amount: 1 };
+    //   const newcartItem = [...cart, newItem];
+    //   setCart(newcartItem);
+    // }
   };
 
   //clear cart
   const clearCart = () => {
-    setCart([]);
+    // setCart([]);
   };
 
   return (
