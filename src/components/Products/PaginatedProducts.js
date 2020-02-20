@@ -7,7 +7,6 @@ const PaginatedProducts = () => {
 
   return (
     <div>
-      hello from PaginatedProducts
       <ProductList products={sorted} />
     </div>
   );
