@@ -1,5 +1,6 @@
-// import React, { useContext } from "react"; page:products.js
 import React from "react";
+import PaginatedProducts from "../components/Products/PaginatedProducts";
+import Filters from "../components/Products/Filters";
 
 import { productContext } from "../context/products";
 import Loading from "../components/Loading";
@@ -11,6 +12,12 @@ export default function Products() {
   if (loading) {
     return <Loading />;
   } else {
-    return <ProductList title="our products" products={sorted} />;
+    // return <ProductList title="our products" products={sorted} />;
+    return (
+      <>
+        <Filters />
+        <PaginatedProducts />
+      </>
+    );
   }
 }
