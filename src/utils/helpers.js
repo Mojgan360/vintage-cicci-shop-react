@@ -27,6 +27,6 @@ export function paginate(products) {
 
     return products.slice(start, start + itemsPerPage);
   });
-  console.log(newProducts);
-  return products;
+  // console.log(newProducts);
+  return newProducts;
 }

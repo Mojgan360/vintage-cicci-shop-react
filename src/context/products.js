@@ -37,8 +37,8 @@ export default function ProductProvider({ children }) {
     return () => {};
   }, []);
 
-  const changePage = index => {
-    console.log(index);
+  const changedPage = index => {
+    setPage(index);
   };
   const updateFilters = e => {
     console.log(e);
@@ -53,7 +53,7 @@ export default function ProductProvider({ children }) {
         sorted,
         filters,
         page,
-        changePage,
+        changedPage,
         updateFilters
       }}
     >
