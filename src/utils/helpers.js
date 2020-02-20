@@ -15,3 +15,8 @@ export function featuredsProduct(data) {
     return item.featured === true;
   });
 }
+//paginate
+export function paginate(products) {
+  //code
+  return products;
+}
