@@ -41,7 +41,8 @@ export default function ProductProvider({ children }) {
     setPage(index);
   };
   const updateFilters = e => {
-    console.log(e);
+    console.log(e.target.value);
+    console.log(e.target.name);
   };
 
   return (
