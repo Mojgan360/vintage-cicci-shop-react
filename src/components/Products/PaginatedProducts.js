@@ -2,6 +2,8 @@ import React from "react";
 import { productContext } from "../../context/products";
 import ProductList from "./ProductList";
 
+import { FaAngleDoubleLeft, FaAngleDoubleRight } from "react-icons/fa";
+
 const PaginatedProducts = () => {
   const { sorted, page, changedPage } = React.useContext(productContext);
 
@@ -12,6 +14,14 @@ const PaginatedProducts = () => {
         {sorted.length > 1 && (
           <article className="pagination-buttons">
             {/* prevs button */}
+            {page > 0 && (
+              <button
+                className="prev-page-btn"
+                onClick={() => changedPage(page - 1)}
+              >
+                <FaAngleDoubleLeft />
+              </button>
+            )}
             {sorted.map((_, index) => {
               return (
                 <button
@@ -24,6 +34,14 @@ const PaginatedProducts = () => {
               );
             })}
             {/* next button */}
+            {page < sorted.length - 1 && (
+              <button
+                className="next-page-btn"
+                onClick={() => changedPage(page + 1)}
+              >
+                <FaAngleDoubleRight />
+              </button>
+            )}
           </article>
         )}
       </>
