@@ -27,7 +27,7 @@ export default function ProductProvider({ children }) {
     axios.get(`${url}/products`).then(response => {
       const featured = featuredsProduct(flattenProducts(response.data));
       const products = flattenProducts(response.data);
-      // setProducts(products);
+      setProducts(products);
       setSorted(paginate(products));
       setFeatured(featured);
 
@@ -41,8 +41,13 @@ export default function ProductProvider({ children }) {
     setPage(index);
   };
   const updateFilters = e => {
-    console.log(e.target.value);
-    console.log(e.target.name);
+    let filterValue;
+    const type = e.target.type;
+    const filter = e.target.name;
+    const value = e.target.value;
+    console.log(type, filter, value);
+
+    setFilters({ ...filters });
   };
 
   return (

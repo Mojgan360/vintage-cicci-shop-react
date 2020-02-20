@@ -7,7 +7,7 @@ import { CartContext } from "../context/cart";
 // import { cartContext } from "../context/cart";
 
 export default function ProductDetails() {
-  const { products } = React.useContext(productContext);
+  const { products, sorted } = React.useContext(productContext);
   const { addToCart } = React.useContext(CartContext);
   // console.log(useParams());
   const history = useHistory();
