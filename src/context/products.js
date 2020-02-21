@@ -37,6 +37,12 @@ export default function ProductProvider({ children }) {
     return () => {};
   }, []);
 
+  React.useEffect(() => {
+    let newProducts = [...products].sort((a, b) => a.price - b.price);
+    setPage(0);
+    setSorted(paginate(newProducts));
+  }, [filters, products]);
+
   const changedPage = index => {
     setPage(index);
   };
@@ -45,9 +51,21 @@ export default function ProductProvider({ children }) {
     const type = e.target.type;
     const filter = e.target.name;
     const value = e.target.value;
-    console.log(type, filter, value);
+    // type = "checkbox"
+    // name = "shipping"
+    // id = "shipping"
+    // checked = { shipping }
+    // onChange = { updateFilters }
+    if (type === "checkbox") {
+      filterValue = e.target.checked;
+    } else if (type === "radio") {
+      value === "all" ? (filterValue = value) : (filterValue = parseInt(value));
+    } else {
+      filterValue = value;
+    }
 
-    setFilters({ ...filters });
+    setFilters({ ...filters, [filter]: filterValue });
+    console.log(type, filter, value);
   };
 
   return (
